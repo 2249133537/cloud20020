@@ -1,0 +1,22 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+#    hostname: localhost  #eureka服务端的实例名称 #单机版
+    #添加C:\Windows\System32\drivers\etc\hosts文件
+    hostname: eureka7001.com  #eureka服务端的实例名称
+  client:
+    #flase表示不向注册中心注册自己，因为自己就是注册中心，所以不需要向自己注册自己
+    register-with-eureka: false
+    #flase表示自己就是注册中心，职责就是维护服务实例，不需要去检索服务
+    fetch-registry: false
+    service-url:
+    #设置与eureka Server交互的地址与查询服务和注册服务都需要这个地址
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/erurka/ #单机版，注册自己
+      defaultZone: http://eureka7001.com:7001/erurka/  #单机版，注册自己
+#      defaultZone: http://eureka7002.com:7002/erurka/  #集群版
+##是否开启心跳监测，默认为true。后者为监测时间
+#  server:
+#    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 2000
