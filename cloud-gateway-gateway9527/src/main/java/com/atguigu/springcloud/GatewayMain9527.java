@@ -14,6 +14,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 //gateway不能有starter-web依赖
 //git提交测试01
 //git合并分支，非冲突
+//git合并分支，冲突测试 master
 public class GatewayMain9527 {
     public static void main(String[] args) {
         SpringApplication.run(GatewayMain9527.class,args);
