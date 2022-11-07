@@ -1,0 +1,44 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/2249133537/springcloud-config.git  #github仓库地址
+          search-paths: #搜索目录
+            - springcloud-config
+#          username: 2249133537@qq.com       #可以不需要
+#          password: heMfiw-3qymsa-jugpej   #可以不需要
+          skip-ssl-validation: true  #http方式需要此行代码
+      label: master #读取的分支
+      #启动成功后访问的路径 http://localhost:3344/{label}/{application}-{profile}.yml 能访问的配置文件 就表示成功了
+      #其中{label}为要读取的分支    {application}-{profile}.yml为要读取的配置文件
+
+
+eureka:
+  client:
+    service-url:
+      #入驻的eureka服务中心地址
+      defaultZone: http://localhost:7001/eureka  #单机版
+      #      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+
+
+
+###rabbitmq相关配置,暴露bus刷新配置的端点 SpringCloud Bus动态刷新全局广播
+#management:
+#  endpoints: #暴露bus刷新配置的端点
+#    web:
+#      exposure:
+#        include: 'bus-refresh'
+
+
+##rabbitmq相关配置
+#rabbitmq:
+#  host: localhost
+#  port: 15672
+#  username: guest
+#  password: guest
