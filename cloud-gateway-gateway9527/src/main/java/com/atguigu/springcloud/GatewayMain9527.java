@@ -17,6 +17,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 //git合并分支，冲突测试 master
 //git合并分支，冲突测试 hot-fix
 //github push 推送测试
+//github pull 拉取测试
 public class GatewayMain9527 {
     public static void main(String[] args) {
         SpringApplication.run(GatewayMain9527.class,args);
