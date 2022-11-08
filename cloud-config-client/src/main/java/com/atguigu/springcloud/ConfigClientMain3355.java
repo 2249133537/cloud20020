@@ -11,6 +11,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+/*
+未加RabbitMQ之前有Git更改信息之后，只有服务端接收到修改，客户端需要重启才接收到修改的问题
+ */
 public class ConfigClientMain3355 {
     public static void main(String[] args) {
         SpringApplication.run(ConfigClientMain3355.class,args);

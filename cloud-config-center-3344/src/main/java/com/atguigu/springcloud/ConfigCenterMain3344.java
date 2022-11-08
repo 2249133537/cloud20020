@@ -13,7 +13,13 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableConfigServer
 @EnableEurekaClient
-//http://localhost:3344/master/config-dev.yml可访问gitHub对应文件内容
+//http://localhost:3344/master/config-dev.yml可访问gitHub对应文件内容->测试是否配置cloud-config成功
+/*
+配置完成RabbitMQ之后
+curl -X POST "http://localhost:3344/actuator/bus-refresh" 刷新服务端
+所有客户端内容都会获得相应刷新(刷新过后内容和实际符合)
+一次发送，处处生效
+ */
 public class ConfigCenterMain3344 {
     public static void main(String[] args) {
         SpringApplication.run(ConfigCenterMain3344.class,args);

@@ -39,7 +39,6 @@ public class MyLogGatewayFilter implements GlobalFilter, Ordered {
 
     /**
      * 加载过滤器顺序，数字越小优先级越高
-     *
      * @return
      */
     @Override

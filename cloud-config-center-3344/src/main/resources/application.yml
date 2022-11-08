@@ -34,7 +34,7 @@ eureka:
 
 ##rabbitmq相关配置,暴露bus刷新配置的端点 SpringCloud Bus动态刷新全局广播
 management:
-  endpoints: #暴露bus刷新配置的端点
+  endpoints: #暴露bus刷新配置的端点，给运维人员提供post刷新端点
     web:
       exposure:
         include: 'bus-refresh'
