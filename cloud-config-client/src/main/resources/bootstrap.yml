@@ -13,6 +13,12 @@ spring:
       profile: dev  #读取后缀名称，GitHub提前准备dev\prod\test三种环境，可修改要读取的文件信息
       #三者结合：读取master分支上的config-dev.yml文件，加之url->http://localhost:3344/master/config-dev.yml
       uri: http://localhost:3344
+    #RabbitMQ相关配置
+  rabbitmq:
+    host: localhost
+    port: 5672  #15672是管理页面  5672是服务页面
+    username: guest
+    password: guest
 
 #将服务注册到eureka中
 eureka:
