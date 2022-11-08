@@ -1,0 +1,30 @@
+#bootstrap.yml优先级高于application
+server:
+  port: 3355
+
+spring:
+  application:
+    name: config-client
+  cloud:
+    #Config客户端配置
+    config:
+      label: master  #分支名称
+      name: config  #配置文件名称
+      profile: dev  #读取后缀名称，GitHub提前准备dev\prod\test三种环境，可修改要读取的文件信息
+      #三者结合：读取master分支上的config-dev.yml文件，加之url->http://localhost:3344/master/config-dev.yml
+      uri: http://localhost:3344
+
+#将服务注册到eureka中
+eureka:
+  client:
+    service-url:
+      #入驻的eureka服务中心地址
+      defaultZone: http://localhost:7001/eureka  #单机版
+      #      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+
+#暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
