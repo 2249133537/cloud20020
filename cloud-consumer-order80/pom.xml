@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+<!--        包含了sleuth+zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <!--        eureka-client,其中自带了ribbon的坐标-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

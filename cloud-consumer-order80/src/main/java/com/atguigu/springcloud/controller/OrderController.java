@@ -74,4 +74,15 @@ public class OrderController {
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri+"/payment/lb",String.class);
     }
+
+    //zipkin+sleuth
+    @GetMapping("consumer/payment/zipkin")
+    public String paymentZipkin(){
+        //未启用负载均衡时候用这个代码，url形式，端口号+服务接口
+//        String result = restTemplate.getForObject("http://locatlhost:8001"+"/payment/zipkin/",String.class);
+
+        //已启用负载均衡，此处用Ribbon负载均衡规则，用服务名调用方式PAYMENT_URL+"/payment/zipkin/"指向服务
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/zipkin/",String.class);
+//        return restTemplate.getForObject(uri+"/payment/lb",String.class);
+    }
 }

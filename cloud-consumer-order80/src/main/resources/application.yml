@@ -5,6 +5,13 @@ spring:
   application:
     #此处与入驻进eureka中心后的名字一致
     name: cloud-order-service
+    #将监控数据以及图标传输到9411端口
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      #采样率值介于0-1之间,1表示全部采集
+      probability: 1
 
 eureka:
   client:
@@ -15,6 +22,6 @@ eureka:
     fetch-registry: true
     service-url:
       #入驻的eureka服务中心地址
-#      defaultZone: http://localhost:7001/eureka  #单机版
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
+      defaultZone: http://localhost:7001/eureka  #单机版
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  #集群版
 
