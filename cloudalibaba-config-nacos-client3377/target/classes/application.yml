@@ -1,0 +1,6 @@
+spring:
+  profiles:
+#    active: info
+  #bootstrap中未配置分组group时使用
+    active: dev  #开发环境
+#    active: test  #测试环境
