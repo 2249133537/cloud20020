@@ -15,7 +15,7 @@ spring:
         server-addr: localhost:8848 #配置中心地址
         file-extension: yaml #指定yaml格式的配置
         group: DEV_GROUP
-        namespace: 05d0d7ed-9223-4dfd-ba7d-57154cec4b12  #dev命名空间
+        namespace: 21069a40-ad78-45e5-bddb-8ca6cd20903f  #dev命名空间
 
 #配置翻译如下，其中dev是在application中找到
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
